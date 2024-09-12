@@ -4,8 +4,19 @@
 	Layout = "mainLayout.cshtml";
 	ViewBag.Title = @Model?.Value("pageTitle") ?? null;
 
+	@*Hero Section*@
 	var backgroundImage = Model?.Value<IPublishedContent>("heroBackgroundImage")?.Url() ?? "";
+
+	@*About us Section*@
 	var signatureImage = Model?.Value<IPublishedContent>("aboutSignatureImage")?.Url() ?? "";
+
+	@*Our Services Section*@
+	var riskPicture = Model?.Value<IPublishedContent>("ourServicesRiskPicture")?.Url() ?? "";
+	var bondsPicture = Model?.Value<IPublishedContent>("ourServicesBondsPicture")?.Url() ?? "";
+	var assurancePicture = Model?.Value<IPublishedContent>("ourServicesAssurancePicture")?.Url() ?? "";
+	var taxPicture = Model?.Value<IPublishedContent>("ourServicesTaxPicture")?.Url() ?? "";
+	var financialPicture = Model?.Value<IPublishedContent>("ourServicesFinancialPicture")?.Url() ?? "";
+	var statisticPicture = Model?.Value<IPublishedContent>("ourServicesStatisticPicture")?.Url() ?? "";
 
 }
 
@@ -45,3 +56,42 @@
 		</div>
 	</div>
 </section>
+
+<section class="services-section">
+        <div class="title">
+			<h5>@Model.Value("ourServicesSectionTitle")</h5>
+            <h2>@Model.Value("ourServicesHeadline")</h2>
+        </div>
+		        <div class="services-grid">
+            <div class="service-box">
+			    <h3>@Model.Value("ourServicesRiskHeadline")</h3>
+                <img class="risk-picture" src="@riskPicture" alt="@Model.Value("ourServicesRiskPicture")" >
+                <p>@Model.Value("ourServicesRiskText")</p>
+            </div>
+            <div class="service-box">
+			    <h3>@Model.Value("ourServicesBondsHeadline")</h3>
+                <img class="bonds-picture" src="@bondsPicture" alt="@Model.Value("ourServicesBondsPicture")" >
+                <p>@Model.Value("ourServicesBondsText")</p>
+            </div>
+            <div class="service-box">
+			    <h3>@Model.Value("ourServicesAssuranceHeadline")</h3>
+                <img class="assurance-picture" src="@assurancePicture" alt="@Model.Value("ourServicesAssurancePicture")" >
+                <p>@Model.Value("ourServicesAssuranceText")</p>
+            </div>
+            <div class="service-box">
+			    <h3>@Model.Value("ourServicesTaxHeadline")</h3>
+                <img class="tax-picture" src="@taxPicture" alt="@Model.Value("ourServicesTaxPicture")" >
+                <p>@Model.Value("ourServicesTaxText")</p>
+            </div>
+            <div class="service-box">
+			    <h3>@Model.Value("ourServicesFinancialHeadline")</h3>
+                <img class="financial-picture" src="@financialPicture" alt="@Model.Value("ourServicesFinancialPicture")" >
+                <p>@Model.Value("ourServicesFinancialText")</p>
+            </div>
+            <div class="service-box">
+			    <h3>@Model.Value("ourServicesStatisticHeadline")</h3>
+                <img class="statistic-picture" src="@statisticPicture" alt="@Model.Value("ourServicesStatisticPicture")" >
+                <p>@Model.Value("ourServicesStatisticText")</p>
+            </div>
+        </div>
+</section>	
