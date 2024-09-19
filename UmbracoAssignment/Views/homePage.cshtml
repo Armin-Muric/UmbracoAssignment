@@ -18,6 +18,11 @@
 	var financialPicture = Model?.Value<IPublishedContent>("ourServicesFinancialPicture")?.Url() ?? "";
 	var statisticPicture = Model?.Value<IPublishedContent>("ourServicesStatisticPicture")?.Url() ?? "";
 
+	@*Clients Section*@
+	var clientsPicture = Model?.Value<IPublishedContent>("clientsPicture")?.Url() ?? "";
+
+	@*Success Section*@
+	var successPicture = Model?.Value<IPublishedContent>("successPicture")?.Url() ?? "";
 }
 
 <h1>@Model.Value("title")</h1>
@@ -52,7 +57,28 @@
 			</div>
 		</div>
 		<div class="form-container">
-				
+		    <h2>@Model.Value("aboutFormHeader")</h2>
+    		<p>@Model.Value("aboutFormText")</p>
+
+	    <form action="#" method="POST">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" placeholder="Name" required>
+
+        <label for="email">Email address</label>
+        <input type="email" id="email" name="email" placeholder="Email address" required>
+
+        <label for="phone">Phone</label>
+        <input type="tel" id="phone" name="phone" placeholder="Phone" required>
+
+	    <label for="service">Service</label>
+        <select id="service" name="service">
+            <option value="financial_consulting">Financial consulting</option>
+            <option value="tax_advice">Tax advice</option>
+            <option value="investment_planning">Investment planning</option>
+        </select>
+
+        <input type="submit" value="Submit" placeholder="@Model.Value("aboutFormButtonText")">
+		</form>
 		</div>
 	</div>
 </section>
@@ -94,4 +120,40 @@
                 <p>@Model.Value("ourServicesStatisticText")</p>
             </div>
         </div>
-</section>	
+</section>
+
+<section>
+	<div class="clients-section">
+		<h2>@Model.Value("clientsHeader")</h2>
+    	<h3>@Model.Value("clientsSecondHeader")</h3>
+    	<p>@Model.Value("clientsText")</p>
+    	<button>@Model.Value("clientsButtonText")</button>
+
+    	<img class="ClientsGroupPhoto" src="@clientsPicture" alt="@Model.Value("clientsPicture")" >
+	</div>
+</section>
+
+<section>
+	<div class="success-section">
+    	<h3>@Model.Value("successSectionTitle")</h3>
+    	<h2>@Model.Value("successHeader")</h2>
+    <div class="stats-container">
+        <div class="stats-item">
+            @Model.Value("successNumberSectionOne")
+            <p>@Model.Value("successNumberSectionOneText")</p>
+        </div>
+        <div class="stats-item">
+            @Model.Value("successNumberSectionTwo")
+            <p>@Model.Value("successNumberSectionTwoText")</p>
+        </div>
+        <div class="stats-item">
+            @Model.Value("successNumberSectionThree")
+            <p>@Model.Value("successNumberSectionThreeText")</p>
+        </div>
+    </div>
+
+    	<div class="image-section">
+        	<img class="Meeting-Picture" src="@successPicture" alt="@Model.Value("successPicture")" >
+    	</div>
+	</div>
+</section>
