@@ -23,6 +23,20 @@
 
 	@*Success Section*@
 	var successPicture = Model?.Value<IPublishedContent>("successPicture")?.Url() ?? "";
+
+	@*Our Projects Section*@
+	var juvaPicture = Model?.Value<IPublishedContent>("ourProjectsBoxOnePicture")?.Url() ?? "";
+	var businessinsightPicture = Model?.Value<IPublishedContent>("ourProjectsBoxTwoPicture")?.Url() ?? "";
+	var irraPicture = Model?.Value<IPublishedContent>("ourProjectsBoxThreePicture")?.Url() ?? "";
+	var buccuraPicture = Model?.Value<IPublishedContent>("ourProjectsBoxFourPicture")?.Url() ?? "";
+
+    @*Partners Section*@
+    var freedombirdPicture = Model?.Value<IPublishedContent>("partnerOnePicture")?.Url() ?? "";
+    var identityPicture = Model?.Value<IPublishedContent>("partnerTwoPicture")?.Url() ?? "";
+    var naturalPicture = Model?.Value<IPublishedContent>("partnerThreePicture")?.Url() ?? "";
+    var simpleafPicture = Model?.Value<IPublishedContent>("partnerFourPicture")?.Url() ?? "";
+    var globePicture = Model?.Value<IPublishedContent>("partnerFivePicture")?.Url() ?? "";
+    var fossilgroupPicture = Model?.Value<IPublishedContent>("partnerSixPicture")?.Url() ?? "";
 }
 
 <h1>@Model.Value("title")</h1>
@@ -156,4 +170,63 @@
         	<img class="Meeting-Picture" src="@successPicture" alt="@Model.Value("successPicture")" >
     	</div>
 	</div>
+</section>
+
+<section class="projects-section">
+		<h5>@Model.Value("ourProjectsSectionTitle")</h5>
+        <h2>@Model.Value("ourProjectsHeader")</h2>
+        <div class="projects-container">
+            <div class="project-item">
+                <img class="Juva-Meeting" src="@juvaPicture" alt="@Model.Value("ourProjectsBoxOnePicture")" >
+                <div class="project-info">
+                    <h3>@Model.Value("ourProjectsBoxOneHeader")</h3>
+                    <p>@Model.Value("ourProjectsBoxOneText")</p>
+                </div>
+            </div>
+            <div class="project-item">
+                <img class="Business-Insights" src="@businessinsightPicture" alt="@Model.Value("ourProjectsBoxTwoPicture")" >
+                <div class="project-info">
+                    <h3>@Model.Value("ourProjectsBoxTwoHeader")</h3>
+                    <p>@Model.Value("ourProjectsBoxTwoText")</p>
+                    <span class="arrow">&#8250;</span>
+                </div>
+            </div>
+            <div class="project-item">
+                <img class="Irra-Corp" src="@irraPicture" alt="@Model.Value("ourProjectsBoxThreePicture")" >
+                <div class="project-info">
+                    <h3>@Model.Value("ourProjectsBoxThreeHeader")</h3>
+                    <p>@Model.Value("ourProjectsBoxThreeText")</p>
+                </div>
+            </div>
+            <div class="project-item">
+                <img class="Buccura-Inc" src="@buccuraPicture" alt="@Model.Value("ourProjectsBoxFourPicture")" >
+            <div class="project-info">
+                <h3>@Model.Value("ourProjectsBoxFourHeader")</h3>
+                <p>@Model.Value("ourProjectsBoxFourText")</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="logo-section">
+        <div class="logo-container">
+            <div class="logo-item">
+                <img class="freedombird-logo" src="@freedombirdPicture" alt="@Model.Value("partnerOnePicture")" >
+            </div>
+            <div class="logo-item">
+                <img class="identity-logo" src="@identityPicture" alt="@Model.Value("partnerTwoPicture")" >
+            </div>
+            <div class="logo-item">
+                <img class="natural-logo" src="@naturalPicture" alt="@Model.Value("partnerThreePicture")" >
+            </div>
+            <div class="logo-item">
+                <img class="simpleaf-logo" src="@simpleafPicture" alt="@Model.Value("partnerFourPicture")" >
+            </div>
+            <div class="logo-item">
+                <img class="globe-logo" src="@globePicture" alt="@Model.Value("partnerFivePicture")" >
+            </div>
+            <div class="logo-item">
+                <img class="fossilgroup-logo" src="@fossilgroupPicture" alt="@Model.Value("partnerSixPicture")" >
+            </div>
+        </div>
 </section>
