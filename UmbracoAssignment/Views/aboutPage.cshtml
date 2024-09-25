@@ -2,5 +2,53 @@
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
 @{
 	Layout = "mainLayout.cshtml";
+	ViewBag.Title = @Model?.Value("pageTitle") ?? null;
+
+    @*About The Company Section*@
+    var tinafoxPicture = Model?.Value<IPublishedContent>("aboutPicture")?.Url() ?? "";
+
+    @*Reviews Section*@
+    var laptopPicture = Model?.Value<IPublishedContent>("reviewsPicture")?.Url() ?? "";
 }
 <h1>@Model.Value("title")</h1>
+
+
+<section class="about-section">
+    <div class="about-header">
+            <h1>@Model.Value("aboutHeadline")</h1>
+            <p>@Model.Value("aboutHomeLink") &gt; @Model.Value("aboutAboutLink")</p>
+    </div>
+        
+    <div class="about-content">
+        <div class="about-text">
+            <blockquote>
+                <h3>@Model.Value("aboutSmallerHeadline")</h3>
+            </blockquote>
+                <p>@Model.Value("aboutText")</p>
+            </div>
+
+            <div class="about-ceo">
+                <img class="Tina-Fox" src="@tinafoxPicture" alt="@Model.Value("aboutPicture")" >
+                <h4>@Model.Value("aboutPictureText")</h4>
+            </div>
+        </div>
+</section>
+
+<section class="testimonial-section">
+        <div class="testimonial-text">
+            <h5>@Model.Value("reviewsPageTitle")</h5>
+            <h2>@Model.Value("reviewsHeadline")</h2>
+            <p>@Model.Value("reviewsText")</p>
+
+            <div class="testimonial-stars">
+                <span>★★★★★</span>
+            </div>
+
+            <div class="testimonial-author">@Model.Value("reviewsRatingName")</div>
+            <div class="testimonial-company">@Model.Value("reviewsRatingCompany")</div>
+        </div>
+
+    <div class="testimonial-image">
+        <img class="GuyUsingLaptop" src="@laptopPicture" alt="@Model.Value("reviewsPicture")" >
+    </div>
+</section>
