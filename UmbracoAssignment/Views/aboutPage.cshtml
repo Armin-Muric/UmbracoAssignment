@@ -9,6 +9,18 @@
 
     @*Reviews Section*@
     var laptopPicture = Model?.Value<IPublishedContent>("reviewsPicture")?.Url() ?? "";
+
+    @*Expert Section*@
+    var newtonPicture = Model?.Value<IPublishedContent>("expertBrandonNewtonPicture")?.Url() ?? "";
+    var carterPicture = Model?.Value<IPublishedContent>("expertAjCarterPicture")?.Url() ?? "";
+    var lambertPicture = Model?.Value<IPublishedContent>("expertAaronLambertPicture")?.Url() ?? "";
+    var foxPicture = Model?.Value<IPublishedContent>("expertTinaFoxPicture")?.Url() ?? "";
+    var kerrPicture = Model?.Value<IPublishedContent>("expertBrandonKerrPicture")?.Url() ?? "";
+    var daytonPicture = Model?.Value<IPublishedContent>("expertMirandaDaytonPicture")?.Url() ?? "";
+    var gardnerPicture = Model?.Value<IPublishedContent>("expertKevinGardnerPicture")?.Url() ?? "";
+
+    @*Let us Know Section*@
+    var manwithglassesPicture = Model?.Value<IPublishedContent>("letUsKnowPicture")?.Url() ?? "";
 }
 <h1>@Model.Value("title")</h1>
 
@@ -51,4 +63,79 @@
     <div class="testimonial-image">
         <img class="GuyUsingLaptop" src="@laptopPicture" alt="@Model.Value("reviewsPicture")" >
     </div>
+</section>
+
+<section class="team-section">
+    <h5>@Model.Value("expertSectionTitle")</h5>
+    <h2>@Model.Value("expertHeadline")</h2>
+        
+    <div class="team-grid">
+        <div class="team-member">
+            <img class="Brandon-Newton" src="@newtonPicture" alt="@Model.Value("expertBrandonNewtonPicture")" >
+            <h3>@Model.Value("expertBrandonNewtonHeadline")</h3>
+            <p>@Model.Value("expertBrandonNewtonText")</p>
+        </div>
+        <div class="team-member">
+            <img class="AJ-Carter" src="@carterPicture" alt="@Model.Value("expertAjCarterPicture")" >
+            <h3>@Model.Value("expertAjCarterHeadline")</h3>
+            <p>@Model.Value("expertAjCarterText")</p>
+        </div>
+        <div class="team-member">
+            <img class="Aaron-Lambert" src="@lambertPicture" alt="@Model.Value("expertAaronLambertPicture")" >
+            <h3>@Model.Value("expertAaronLambertHeadline")</h3>
+            <p>@Model.Value("expertAaronLambertText")</p>
+        </div>
+        <div class="team-member">
+            <img class="Tina-Fox" src="@foxPicture" alt="@Model.Value("expertTinaFoxPicture")" >
+            <h3>@Model.Value("expertTinaFoxHeadline")</h3>
+            <p>@Model.Value("expertTinaFoxText")</p>
+        </div>
+        <div class="team-member">
+            <img class="Brandon-Kerr" src="@kerrPicture" alt="@Model.Value("expertBrandonKerrPicture")" >
+            <h3>@Model.Value("expertBrandonKerrHeadline")</h3>
+            <p>@Model.Value("expertBrandonKerrText")</p>
+        </div>
+        <div class="team-member">
+            <img class="Miranda-Dayton" src="@daytonPicture" alt="@Model.Value("expertMirandaDaytonPicture")" >
+            <h3>@Model.Value("expertMirandaDaytonHeadline")</h3>
+            <p>@Model.Value("expertMirandaDaytonText")</p>
+        </div>
+        <div class="team-member">
+            <img class="Kevin-Gardner" src="@gardnerPicture" alt="@Model.Value("expertKevinGardnerPicture")" >
+            <h3>@Model.Value("expertKevinGardnerHeadline")</h3>
+            <p>@Model.Value("expertKevinGardnerText")</p>
+        </div>
+    </div>
+</section>
+
+<section class="contact-section">
+    <div class="image-wrapper">
+        <img class="Man-with-glasses" src="@manwithglassesPicture" alt="@Model.Value("letUsKnowPicture")" >
+    </div>
+    <div class="details">
+        <h2>@Model.Value("letUsKnowHeadline")</h2>
+            <ul>
+                <li>
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div class="info">
+                        <strong>@Model.Value("letUsKnowLocationSection")</strong><br>
+                        @Model.Value("letUsKnowLocationText")
+                    </div>
+                </li>
+                <li>
+                    <i class="fas fa-phone"></i>
+                    <div class="info">
+                        <strong>@Model.Value("letUsKnowNumberSection")</strong><br>
+                        @Model.Value("letUsKnowNumberText")
+                    </div>
+                </li>
+                <li>
+                    <i class="fas fa-envelope"></i>
+                    <div class="info">
+                        <strong>@Model.Value("letUsKnowEMailSection")</strong><br>
+                        @Model.Value("letUsKnowEMailText")
+                    </div>
+                </li>
+            </ul>
+        </div>
 </section>
