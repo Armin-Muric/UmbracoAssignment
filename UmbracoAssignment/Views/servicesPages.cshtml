@@ -1,0 +1,99 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@{
+	Layout = "mainLayout.cshtml";
+	ViewBag.Title = @Model?.Value("pageTitle") ?? null;
+
+    @*Our Services Section*@
+    var riskPicture = Model?.Value<IPublishedContent>("servicesSquare1Picture")?.Url() ?? "";
+    var commodPicture = Model?.Value<IPublishedContent>("servicesSquare2Picture")?.Url() ?? "";
+    var auditsPicture = Model?.Value<IPublishedContent>("servicesSquare3Picture")?.Url() ?? "";
+    var trustsPicture = Model?.Value<IPublishedContent>("servicesSquare4Picture")?.Url() ?? "";
+    var financialadPicture = Model?.Value<IPublishedContent>("servicesSquare5Picture")?.Url() ?? "";
+    var statisticadPicture = Model?.Value<IPublishedContent>("servicesSquare6Picture")?.Url() ?? "";
+}
+
+<h1>@Model.Value("title")</h1>
+
+<section class="services-section">
+	<div class="container">
+        <div class="header">
+            <h1>@Model.Value("servicesHeadline")</h1>
+	    	<div class="breadcrumb">
+            	<a href="#">@Model.Value("servicesHomeLink")</a> &gt; <span>@Model.Value("servicesServicesLink")</span>
+        	</div>
+            <h1>@Model.Value("servicesSecondHeadline")</h1>
+        </div>
+
+        <div class="services">
+            <div class="service-box">
+                <h3>@Model.Value("servicesSquare1Headline")</h3>
+                <img class="risk-management" src="@riskPicture" alt="@Model.Value("servicesSquare1Picture")" >
+                <p>@Model.Value("servicesSquare1Text")</p>
+            </div>
+            <div class="service-box">
+                <h3>@Model.Value("servicesSquare2Headline")</h3>
+                <img class="bonds-commodities" src="@commodPicture" alt="@Model.Value("servicesSquare2Picture")" >
+                <p>@Model.Value("servicesSquare2Text")</p>
+            </div>
+            <div class="service-box">
+                <h3>@Model.Value("servicesSquare3Headline")</h3>
+                <img class="assurance-audits" src="@auditsPicture" alt="@Model.Value("servicesSquare3Picture")" >
+                <p>@Model.Value("servicesSquare3Text")</p>
+            </div>
+            <div class="service-box">
+                <h3>@Model.Value("servicesSquare4Headline")</h3>
+                <img class="tax-trusts" src="@trustsPicture" alt="@Model.Value("servicesSquare4Picture")" >
+                <p>@Model.Value("servicesSquare4Text")</p>
+            </div>
+            <div class="service-box">
+                <h3>@Model.Value("servicesSquare5Headline")</h3>
+                <img class="financial-advisor" src="@financialadPicture" alt="@Model.Value("servicesSquare5Picture")" >
+                <p>@Model.Value("servicesSquare5Text")</p>
+            </div>
+            <div class="service-box">
+                <h3>@Model.Value("servicesSquare6Headline")</h3>
+                <img class="statistic-advisors" src="@statisticadPicture" alt="@Model.Value("servicesSquare6Picture")" >
+                <p>@Model.Value("servicesSquare6Text")</p>
+            </div>
+        </div>
+        <div class="pagination">
+            <span>Prev</span>
+            <a href="#" class="active">1</a>
+            <a href="#">2</a>
+            <a href="#">Next</a>
+        </div>
+    </div>
+</section>
+
+<section class="contact-section">
+    <div class="image-wrapper">
+        <img class="Man-with-glasses" src="@manwithglassesPicture" alt="@Model.Value("letUsKnowPicture")" >
+    </div>
+    <div class="details">
+        <h2>@Model.Value("servicesLetUsKnowHeadline")</h2>
+            <ul>
+                <li>
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div class="info">
+                        <strong>@Model.Value("servicesLetUsKnowLocationSection")</strong><br>
+                        @Model.Value("servicesLetUsKnowLocationText")
+                    </div>
+                </li>
+                <li>
+                    <i class="fas fa-phone"></i>
+                    <div class="info">
+                        <strong>@Model.Value("servicesLetUsKnowNumberSection")</strong><br>
+                        @Model.Value("servicesLetUsKnowNumberText")
+                    </div>
+                </li>
+                <li>
+                    <i class="fas fa-envelope"></i>
+                    <div class="info">
+                        <strong>@Model.Value("servicesLetUsKnowEMailSection")</strong><br>
+                        @Model.Value("servicesLetUsKnowEMailText")
+                    </div>
+                </li>
+            </ul>
+        </div>
+</section>
