@@ -11,6 +11,8 @@
     var trustsPicture = Model?.Value<IPublishedContent>("servicesSquare4Picture")?.Url() ?? "";
     var financialadPicture = Model?.Value<IPublishedContent>("servicesSquare5Picture")?.Url() ?? "";
     var statisticadPicture = Model?.Value<IPublishedContent>("servicesSquare6Picture")?.Url() ?? "";
+
+    var manwithglassesPicture = Model?.Value<IPublishedContent>("servicesLetUsKnowPicture")?.Url() ?? "";
 }
 
 <h1>@Model.Value("title")</h1>
@@ -68,7 +70,7 @@
 
 <section class="contact-section">
     <div class="image-wrapper">
-        <img class="Man-with-glasses" src="@manwithglassesPicture" alt="@Model.Value("letUsKnowPicture")" >
+        <img class="Man-with-glasses" src="@manwithglassesPicture" alt="@Model.Value("servicesLetUsKnowPicture")" >
     </div>
     <div class="details">
         <h2>@Model.Value("servicesLetUsKnowHeadline")</h2>

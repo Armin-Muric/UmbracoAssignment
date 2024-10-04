@@ -1,0 +1,148 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@{
+	Layout = "mainLayout.cshtml";
+	ViewBag.Title = @Model?.Value("pageTitle") ?? null;
+
+	@*Our Projects Section*@
+	var reportjuvaPicture = Model?.Value<IPublishedContent>("projectsInfoSection1Picture")?.Url() ?? "";
+	var spgroupPicture = Model?.Value<IPublishedContent>("projectsInfoSection2Picture")?.Url() ?? "";
+	var irragroupPicture = Model?.Value<IPublishedContent>("projectsInfoSection3Picture")?.Url() ?? "";
+	var buccuraincPicture = Model?.Value<IPublishedContent>("projectsInfoSection4Picture")?.Url() ?? "";
+
+    var manwithglassesPicture = Model?.Value<IPublishedContent>("projectsLetUsKnowPicture")?.Url() ?? "";
+}
+
+<h1>@Model.Value("title")</h1>
+
+<section class="projects-section">
+	 <div class="container">
+        <div class="header">
+            <h1>@Model.Value("projectsHeadline")</h1>
+	    	<div class="breadcrumb">
+            	<a href="#">@Model.Value("projectsHomeLink")</a> &gt; <span>@Model.Value("projectsProjectsLink")</span>
+        	</div>
+        </div>
+        <div class="projects">
+            <!-- Project 1 -->
+            <div class="project-card">
+                <img class="report-juva" src="@reportjuvaPicture" alt="@Model.Value("projectsInfoSection1Picture")" >
+                <div class="project-content">
+                    <div class="project-title">@Model.Value("projectsInfoSection1Headline")</div>
+                    <div class="project-date">@Model.Value("projectsInfoSection1Date")</div>
+                    <div class="project-description">
+                        @Model.Value("projectsInfoSection1Text")
+                    </div>
+                    <a href="#" class="read-more">@Model.Value("projectsInfoSection1ButtonText") →</a>
+                </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="project-card">
+                <img class="sp-group" src="@spgroupPicture" alt="@Model.Value("projectsInfoSection2Picture")" >
+                <div class="project-content">
+                    <div class="project-title">@Model.Value("projectsInfoSection2Headline")</div>
+                    <div class="project-date">@Model.Value("projectsInfoSection2Date")</div>
+                    <div class="project-description">
+                        @Model.Value("projectsInfoSection2Text")
+                    </div>
+                    <a href="#" class="read-more">@Model.Value("projectsInfoSection2ButtonText") →</a>
+                </div>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="project-card">
+                <img class="irra-group" src="@irragroupPicture" alt="@Model.Value("projectsInfoSection3Picture")" >
+                <div class="project-content">
+                    <div class="project-title">@Model.Value("projectsInfoSection3Headline")</div>
+                    <div class="project-date">@Model.Value("projectsInfoSection3Date")</div>
+                    <div class="project-description">
+                        @Model.Value("projectsInfoSection3Text")
+                    </div>
+                    <a href="#" class="read-more">@Model.Value("projectsInfoSection3ButtonText") →</a>
+                </div>
+            </div>
+
+            <!-- Project 4 -->
+            <div class="project-card">
+                <img class="buccura-inc" src="@buccuraincPicture" alt="@Model.Value("projectsInfoSection4Picture")" >
+                <div class="project-content">
+                    <div class="project-title">@Model.Value("projectsInfoSection4Headline")</div>
+                    <div class="project-date">@Model.Value("projectsInfoSection4Date")</div>
+                    <div class="project-description">
+                        @Model.Value("projectsInfoSection4Text")
+                    </div>
+                    <a href="#" class="read-more">@Model.Value("projectsInfoSection4ButtonText") →</a>
+                </div>
+            </div>
+
+            <!-- Pagination -->
+            <div class="pagination">
+                <a href="#">Prev</a>
+                <a href="#">1</a>
+                <a href="#">2</a>
+                <a href="#">Next</a>
+            </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <!-- Tags -->
+            <div class="tags-box">
+                <h3>Tags</h3>
+                <div class="tags">
+                    <a href="#">Report</a>
+                    <a href="#">Business plans</a>
+                    <a href="#">Insights</a>
+                    <a href="#">Business</a>
+                    <a href="#">App</a>
+                    <a href="#">Project</a>
+                    <a href="#">Finance</a>
+                    <a href="#">Pricing</a>
+                </div>
+            </div>
+
+            <!-- Support Box -->
+            <div class="support-box">
+                <h3>@Model.Value("projectsFormHeadline")</h3>
+                <p>@Model.Value("projectsFormText")</p>
+                <form>
+                    <input type="email" placeholder="Email address">
+                    <input type="submit" value="Send">
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="contact-section">
+    <div class="image-wrapper">
+        <img class="Man-with-glasses" src="@manwithglassesPicture" alt="@Model.Value("projectsLetUsKnowPicture")" >
+    </div>
+    <div class="details">
+        <h2>@Model.Value("projectsLetUsKnowHeadline")</h2>
+            <ul>
+                <li>
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div class="info">
+                        <strong>@Model.Value("projectsLetUsKnowLocationSection")</strong><br>
+                        @Model.Value("projectsLetUsKnowLocationText")
+                    </div>
+                </li>
+                <li>
+                    <i class="fas fa-phone"></i>
+                    <div class="info">
+                        <strong>@Model.Value("projectsLetUsKnowNumberSection")</strong><br>
+                        @Model.Value("projectsLetUsKnowNumberText")
+                    </div>
+                </li>
+                <li>
+                    <i class="fas fa-envelope"></i>
+                    <div class="info">
+                        <strong>@Model.Value("projectsLetUsKnowEMailSection")</strong><br>
+                        @Model.Value("projectsLetUsKnowEMailText")
+                    </div>
+                </li>
+            </ul>
+        </div>
+</section>
