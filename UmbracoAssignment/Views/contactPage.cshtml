@@ -1,0 +1,104 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@{
+	Layout = "mainLayout.cshtml";
+	ViewBag.Title = @Model?.Value("pageTitle") ?? null;
+
+    @*Contact Section*@
+    var manwithglassesPicture = Model?.Value<IPublishedContent>("contactLetUsKnowSectionPicture")?.Url() ?? "";
+    var mapPicture = Model?.Value<IPublishedContent>("contactContactFormPicture")?.Url() ?? "";
+
+    @*Partners Section*@
+    var freedombirdPicture = Model?.Value<IPublishedContent>("contactPartnersFreedomBirdPicture")?.Url() ?? "";
+    var identityPicture = Model?.Value<IPublishedContent>("contactPartnersIdentityPicture")?.Url() ?? "";
+    var naturalPicture = Model?.Value<IPublishedContent>("contactPartnersNaturalPicture")?.Url() ?? "";
+    var simpleafPicture = Model?.Value<IPublishedContent>("contactPartnersSimpLeafPicture")?.Url() ?? "";
+    var globePicture = Model?.Value<IPublishedContent>("contactPartnersGlobePicture")?.Url() ?? "";
+    var fossilgroupPicture = Model?.Value<IPublishedContent>("contactPartnersFossilGroupPicture")?.Url() ?? "";
+}
+
+<h1>@Model.Value("title")</h1>
+
+<section class="contact-section">
+	 <div class="container">
+        <div class="header">
+            <h1>@Model.Value("contactHeadline")</h1>
+	    	<div class="breadcrumb">
+            	<a href="#">@Model.Value("contactHomeLink")</a> &gt; @Model.Value("contactContactLink")<span></span>
+    	</div>
+    </div>
+    
+    <div class="image-wrapper">
+        <img class="Man-with-glasses" src="@manwithglassesPicture" alt="@Model.Value("contactLetUsKnowSectionPicture")" >
+    </div>
+    <div class="details">
+        <h2>@Model.Value("contactLetUsKnowSectionHeadline")</h2>
+            <ul>
+                <li>
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div class="info">
+                        <strong>@Model.Value("contactLetUsKnowSectionLocationSection")</strong><br>
+                        @Model.Value("contactLetUsKnowSectionLocationText")
+                    </div>
+                </li>
+                <li>
+                    <i class="fas fa-phone"></i>
+                    <div class="info">
+                        <strong>@Model.Value("contactLetUsKnowSectionNumberSection")</strong><br>
+                        @Model.Value("contactLetUsKnowSectionNumberText")
+                    </div>
+                </li>
+                <li>
+                    <i class="fas fa-envelope"></i>
+                    <div class="info">
+                        <strong>@Model.Value("contactLetUsKnowSectionEMailSection")</strong><br>
+                        @Model.Value("contactLetUsKnowSectionEMailText")
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+    <div class="map-background">
+        <img class="contactform-map" src="@mapPicture" alt="@Model.Value("contactContactFormPicture")" >
+    </div>
+    <div class="form-container">
+        <div class="form-box">
+            <h5>@Model.Value("contactContactFormSectionTitle")</h5>
+            <h2>@Model.Value("contactContactFormHeadline")</h2>
+            <p>@Model.Value("contactContactFormText")</p>
+            <form action="#" method="post">
+                <input type="text" name="name" placeholder="Name" required>
+                <input type="email" name="email" placeholder="Email address" required>
+                <input type="tel" name="phone" placeholder="Phone" required>
+                <select name="service" required>
+                    <option value="" disabled selected>Financial consulting</option>
+                    <option value="consulting">Consulting</option>
+                    <option value="investment">Investment</option>
+                    <option value="strategy">Strategy</option>
+                </select>
+                <button type="submit">@Model.Value("contactContactFormButtonText")</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="logo-container">
+        <div class="logo-item">
+            <img class="freedombird-logo" src="@freedombirdPicture" alt="@Model.Value("contactPartnersFreedomBirdPicture")" >
+        </div>
+        <div class="logo-item">
+            <img class="identity-logo" src="@identityPicture" alt="@Model.Value("contactPartnersIdentityPicture")" >
+        </div>
+        <div class="logo-item">
+            <img class="natural-logo" src="@naturalPicture" alt="@Model.Value("contactPartnersNaturalPicture")" >
+        </div>
+        <div class="logo-item">
+            <img class="simpleaf-logo" src="@simpleafPicture" alt="@Model.Value("contactPartnersSimpLeafPicture")" >
+        </div>
+        <div class="logo-item">
+            <img class="globe-logo" src="@globePicture" alt="@Model.Value("contactPartnersGlobePicture")" >
+        </div>
+        <div class="logo-item">
+            <img class="fossilgroup-logo" src="@fossilgroupPicture" alt="@Model.Value("contactPartnersFossilGroupPicture")" >
+        </div>
+    </div>
+</section>
